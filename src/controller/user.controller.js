@@ -12,8 +12,7 @@ route.get('/', async (req, res) => {
 
 route.get('/:_id', async (req, res) => {
     try {
-        const data = await getById(req.params._id)
-        buildResponse(res, 200, data)
+        buildResponse(res, 200, await getById(req.params._id))
     } catch (err) {
         buildResponse(res, 404, err.message)
     }

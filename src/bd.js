@@ -8,8 +8,13 @@ const TableUser = mongoose.model('users', {
     email: String,
     password: String,
     age: Number
-})
+});
+
+const TableSkill = mongoose.model('skill', {
+    language: String,
+    grade: Number
+});
 
 const ObjectId = mongoose.Types.ObjectId
 
-module.exports = { TableUser, ObjectId }
+module.exports = { TableSkill, TableUser, ObjectId }
